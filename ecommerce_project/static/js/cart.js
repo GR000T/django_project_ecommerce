@@ -6,10 +6,10 @@ for (i=0 ;i<updateBtns.length;i++)
     updateBtns[i].addEventListener('click', function(){
         var productId=this.dataset.product
         var action = this.dataset.action
-        console.log('productID:',productId,'action:',action)
+        console.log('productID:',productId,'Action:',action)
         console.log('USER:',user)
         if(user==='AnonymousUser'){
-            console.log('not logged in')
+            console.log('User is not authenticated')
         }else
         {
            updateUserOrder(productId,action)
@@ -19,21 +19,28 @@ for (i=0 ;i<updateBtns.length;i++)
 
 function updateUserOrder(productId,action)
 {
-    console.log('logged in ,sending data...')
+    console.log('User is authenticated,sending data...')
 
-    var url= '/update_item/'
+    var url='/update_item/'
+
     fetch(url, {
-        method:'POST' ,
+        method: 'POST',
         headers:{
-            'Content-Type':'application/json',
-            //'X-CSRFToken': csrftoken,
+            'Content-Type': 'application/json',
+            'X-CSRFToken': csrftoken,
         },
-        body:JSON.stringify({'productId': productId,'action': action}),
+        body:JSON.stringify({'productId':productId,'action':action})
+
     })
-    .then((response) => {
-        return response.json()
+    .then((response) =>{
+        return response.json();
     })
-    .then((data) => {
+
+    .then((data) =>{
         console.log('Data:',data)
+        window.location.reload(true);
+
+
     })
 }
+
