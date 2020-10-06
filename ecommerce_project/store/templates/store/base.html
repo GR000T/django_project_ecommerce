@@ -78,7 +78,7 @@
 			</li>
 		    </ul>
 		    <div class="form-inline my-2 my-lg-0">
-				<a href="#"class="btn btn-warning">Login</a>
+				<a href="{% url 'login' %}"class="btn" style="background-color: rgb(200, 255, 255);">Login</a>
 				<a href="{% url 'cart' %}">
 			    	<img  id="cart-icon" src="{% static 'images/cart.png' %} ">
 				</a>
@@ -98,5 +98,9 @@
 		 </div>
 		 
 <script type="text/javascript" src="{% static 'js/cart.js' %}"></script>
+<br>
+<br>
+<footer class="bg-dark navbar" style="color:rgb(111, 255, 255);">© 2020 GroootCart. All rights reserved.
+</footer>
 </body>
 </html>
