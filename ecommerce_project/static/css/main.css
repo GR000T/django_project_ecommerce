@@ -1,6 +1,7 @@
 
 body{
 	background-color:rgb(200, 255, 255);
+	padding-bottom: 0%;
 }
 
 h1,h2,h3,h4,h5,h6{
@@ -25,6 +26,7 @@ h1,h2,h3,h4,h5,h6{
 .product{
 	border-radius: 0 0 4px 4px;
 }
+
 
 .bg-dark{
 	background-color: #000000!important;
@@ -54,6 +56,12 @@ h1,h2,h3,h4,h5,h6{
 .btn{
 	border-radius: 5%;
 	
+}
+.btnn{
+	border-radius: 5%;
+	padding:0.45%;
+	background-color: red; 
+	color: white;
 }
 
 .row-image{

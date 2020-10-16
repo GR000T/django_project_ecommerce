@@ -415,6 +415,9 @@ input.input100 {
     opacity: 1;
   }
 }
-
-
-
+.suc {
+  width: auto;
+  height: auto;
+  background-color: rgb(86, 255, 8);
+  color:black;
+}

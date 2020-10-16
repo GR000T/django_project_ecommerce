@@ -82,6 +82,13 @@ h2 {
 .clear {
   clear: both; }
 
+.err {
+  width: auto;
+  height: auto;
+  background-color: rgb(255, 8, 8);
+  color:black;
+}
+
 body {
   font-size: 14px;
   line-height: 1.8;
@@ -298,6 +305,9 @@ input[type=checkbox]:not(old):checked + label > span:before {
   z-index: 2;
   color: #555; }
 
+
+
+
 @media screen and (max-width: 768px) {
   .container {
     width: calc(100% - 40px);
@@ -305,5 +315,4 @@ input[type=checkbox]:not(old):checked + label > span:before {
 @media screen and (max-width: 480px) {
   .signup-content {
     padding: 50px 25px; } }
-
 /*# sourceMappingURL=style.css.map */

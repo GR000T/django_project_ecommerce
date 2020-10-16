@@ -41,8 +41,14 @@
                             <input type="submit" name="submit" id="submit" class="form-submit" value="Sign up"/>
                         </div>
                     </form>
-                
-                    {{form.errors}}
+
+                    {% for field in form %}
+                    {% if field.errors %}
+                    <script>
+                    alert("{{ field.errors|striptags }}");
+                    </script>
+                    {% endif %}
+				    {% endfor %}          
                     <p class="loginhere">
                         Already have an account ? <a href="{% url 'login' %}" class="loginhere-link">Login here</a>
                     </p>

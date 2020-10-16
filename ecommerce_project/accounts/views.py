@@ -10,6 +10,7 @@ from django.contrib.auth.models import User
 from store.models import Customer
 from .forms import UserLoginForm,UserRegisterForm
 from django.contrib import messages
+from django.urls import reverse
 
 @csrf_exempt
 def register(request):
@@ -23,7 +24,6 @@ def register(request):
             user.save()
             messages.success(request,'Account Created')
             return redirect('login')
-
     context={'form':form}
     return render(request,'accounts/register.html',context)
 

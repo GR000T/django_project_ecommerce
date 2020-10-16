@@ -34,6 +34,13 @@
 					<span class="login100-form-title p-b-33">
 						Account Login
 					</span>
+					{% if messages %}
+					{% for message in messages %}
+					{% if message.tags %} 
+					<script>alert("{{ message }}")</script> 
+					{% endif %}
+					{% endfor %}
+					{% endif %}
 
 					<div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
 						{{form.username}}
@@ -46,9 +53,7 @@
 						<span class="focus-input100-1"></span>
 						<span class="focus-input100-2"></span>
 					</div>
-					{% for message in messages %}
-						<p>{{message}}</p>
-					{% endfor %}
+					
 					
 					<div class="container-login100-form-btn m-t-20">
 						<button class="login100-form-btn"> 

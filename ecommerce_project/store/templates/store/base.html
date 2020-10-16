@@ -77,15 +77,26 @@
 			  <a class="nav-link" href="{% url 'store' %}">Store <span class="sr-only">(current)</span></a>
 			</li>
 			</ul>
-			
+			{% if request.resolver_match.url_name != 'login' %}
+			{% if request.resolver_match.url_name != 'register'%}
+			{% if not request.user.is_authenticated %}
 		    <div class="form-inline my-2 my-lg-0">
 				<a href="{% url 'login' %}"class="btn" style="background-color: rgb(200, 255, 255);">Login</a>
+				
+				{% else %}
+				{% if request.resolver_match.url_name == 'store' %}
+					<p style="color: whitesmoke; font-size:large; margin-top: 1.25%;"> Hi {{user.username}}..!</p>
+				{% endif %} 
+				<p> &nbsp;</p>
+				<a href="{% url 'logout' %}" class="btnn" >Logout</a>
+				{% endif %}
 				<a href="{% url 'cart' %}">
-			    	<img  id="cart-icon" src="{% static 'images/cart.png' %} ">
+					<img  id="cart-icon" src="{% static 'images/cart.png' %} ">
 				</a>
-		     	 <p id="cart-total">{{cartItems}}</p>
+				<p id="cart-total">{{cartItems}}</p>
 		   
 			</div>
+			{% endif %}{% endif %}
 		</div>
 	  </nav>
         <hr>
