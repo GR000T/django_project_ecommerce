@@ -32,7 +32,6 @@ def login_view(request):
     form=UserLoginForm()
     
     if(request.method=="POST"):
-        
         #form=UserLoginForm(request.POST)
         username=request.POST.get('username')
         password=request.POST.get('password')
@@ -40,6 +39,8 @@ def login_view(request):
         if user is not None:
             login(request,user)
             return redirect('store')
+        else:
+            messages.error(request,'Invalid Username or Password')
 
     context={'form':form}
     return render(request,'accounts/login.html',context)
